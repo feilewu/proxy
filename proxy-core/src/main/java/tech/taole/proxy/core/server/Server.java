@@ -1,21 +1,21 @@
 package tech.taole.proxy.core.server;
 
-import tech.taole.proxy.core.server.receiver.RemoteReceiver;
-
 public class Server {
 
-    private RemoteReceiver remoteReceiver;
-
-    private RemoteConnector remoteConnector;
+    private ServerContext serverContext;
 
     public Server(){
-        remoteReceiver = new RemoteReceiver();
+        serverContext = new ServerContext();
     }
 
     public void start(){
-        remoteReceiver.startService();
+        serverContext.start();
     }
 
+
+    public ServerContext getServerContext(){
+        return serverContext;
+    }
 
 
     public static void main(String[] args) {
